@@ -16,9 +16,17 @@ The function should:
 */
 
 
-function createMenuItem(/*Your code here*/){
-  /*Your code here*/
+function createMenuItem(value1, value2, value3,){
+  const newObj = {
+    name: value1,
+    price: value2,
+    category: value3,
+  }
+  return newObj;
 }
+console.log(createMenuItem('Tacos', 8, 'Lunch'))
+console.log(createMenuItem('Pizza', 4, 'Dinner'))
+console.log(createMenuItem('Nachos', 3, 'Lunch'))
 
 
 
@@ -51,9 +59,19 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount: function(user) {
+    if(user === 'teacher') {
+      return this.price - (this.price / 100) * 25 
+    } 
+    else if(user === 'student') {
+      return this.price - (this.price / 100) * 25
+    }
+    else if(user === 'public') {
+      return this.price - (this.price / 100) * 10
+    }
+  } 
 }
-
+console.log(burger.discount('public'));
 
 
 ///////////////Reviews (MVP)///////////////////
