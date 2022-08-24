@@ -114,11 +114,16 @@ Use the addReview function below to do the following:
 */
 
 
-function addReview(arr, name, rating, feedback){
-  const arr = {};
+function addReview(arr, i, o, u){
+  const obj = {}
+  obj.name = i;
+  obj.rating = o;
+  obj.feedback = u;
 
+ arr.push(obj);
+  return arr;
 }
-
+console.log(addReview(reviews, 'Billy', 2, 'Lame food!'));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -132,9 +137,10 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(arr, index) {
+  return `${arr[index].name} gave the restaurant a ${arr[index].rating} star review, and their feedback was: ${arr[index].feedback}`;
 }
+console.log(getReviewByIndex(reviews, 0));
 
   
 
@@ -151,10 +157,11 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(arr) {
+  let i = arr.length - 1;
+  return `${arr[i].name} gave the restaurant a ${arr[i].rating} star review, and their feedback was: ${arr[i].feedback}`
 } 
-
+console.log(getLastReview(reviews));
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
